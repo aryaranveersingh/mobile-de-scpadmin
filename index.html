@@ -1,0 +1,230 @@
+
+<html>
+	<head>
+		<title>Mobile.de - Scraper</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-select.min.css">
+		<link rel="stylesheet" type="text/css" href="css/loader.css">
+		<link rel="stylesheet" type="text/css" href="css/application.css">
+	</head>
+	<body class="container-fluid">
+		<div class="topNav">
+			<p class="signText">Mobile.de - Scraper  |   Control Panel </p>
+			<!-- <a href="#" class="navbar-link">Start Script</a><a href="#" class="navbar-link">Register ?</a> -->
+		</div>
+		<div class=" forms-container">
+			
+			<!-- <form class="form well" action="#">
+				<p><h3><b>kleinanzeigen.ebay.de Login</b></h3></p>
+				<div class="form-group">
+					<label>Username</label>
+					<input class="form-control username"type="text" placeholder="username" name="username"/>
+				</div>
+				<div class="form-group">
+					<label>Password</label>
+					<input class="form-control password" type="password" placeholder="password" name="password"/>
+				</div>
+				<button class="btn btn-stop login">Login</button><span class="colspan"></span>
+			</form> -->
+			<hr />
+				<div class="input-group">
+			      	<span><input type="radio" class="exporttype" value="csv" name="exporttype" checked > CSV <span><span class="colspan"></span><span><input type="radio" class="exporttype" value="excel" name="exporttype" > Excel</span>
+			    </div>
+			<hr/>
+			<form class="form well" action="#">
+				<div class="form-group">
+					<label>Please enter from date (YYYY-MMM-DD)</label>
+					<input type="text" class="form-control fromdateval" name="fromdate" placeholder="YYYY-MMM-DD">
+				</div>
+				<button type="submit" class="btn btn-info exportfrom" >Export Phone</button><span class="colspan"></span>
+			</form>
+			<p>
+				<button type="submit" class="btn btn-info export" >Export Todays Results</button>
+				<button type="submit" class="btn btn-info exportall" >Export All</button>
+			</p>
+			<div class=""></div>
+			<hr />
+			<!-- <form class="form">
+				<div class="form-group">
+				    <label>Type</label>
+				    <select id="Vtype" class="vtype form-control">
+				    	<option value="1" >Car</option>
+				    	<option value="2" >Bike</option>
+				    	<option value="3">Carvan</option>
+				    </select>
+				</div>
+			</form> -->
+			<p class="deletepannel"><button type="submit" class="btn btn-primary startscrape">Start Script</button><span class="colspan"></span><button class="btn btn-stop removeall">Delete All Databases</button></p>
+			
+
+		</div>
+		<div class="container-fluid well logs">
+		</div>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.js"></script>
+		<script type="text/javascript" src="js/bootstrap-select.js"></script>
+		<script type="text/javascript" src="js/application.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('.vtype').selectpicker({
+					tickIcon: 'none' 
+				});
+			});
+		</script>
+	</body>
+</html>
+
+  <!-- <div class="form-group">
+			    <label for="exampleInputEmail2">Email</label>
+			    <select id="cars" class="cars selectors" name="makeModelVariant1.makeId"><option value="">Beliebig</option><option value="140">Abarth</option><option value="203">AC</option><option value="375">Acura</option><option value="800">Aixam</option><option value="900">Alfa Romeo</option><option value="1100">ALPINA</option><option value="121">Artega</option><option value="1750">Asia Motors</option><option value="1700">Aston Martin</option><option value="1900">Audi</option><option value="2000">Austin</option><option value="1950">Austin Healey</option><option value="3100">Bentley</option><option value="3500">BMW</option><option value="3850">Borgward</option><option value="4025">Brilliance</option><option value="4350">Bugatti</option><option value="4400">Buick</option><option value="4700">Cadillac</option><option value="112">Casalini</option><option value="5300">Caterham</option><option value="83">Chatenet</option><option value="5600">Chevrolet</option><option value="5700">Chrysler</option><option value="5900">Citroën</option><option value="6200">Cobra</option><option value="6325">Corvette</option><option value="6600">Dacia</option><option value="6800">Daewoo</option><option value="7000">Daihatsu</option><option value="7400">DeTomaso</option><option value="7700">Dodge</option><option value="8600">Ferrari</option><option value="8800">Fiat</option><option value="172">Fisker</option><option value="9000">Ford</option><option value="205">GAC Gonow</option><option value="204">Gemballa</option><option value="9900">GMC</option><option value="122">Grecav</option><option value="186">Hamann</option><option value="10850">Holden</option><option value="11000">Honda</option><option value="11050">Hummer</option><option value="11600">Hyundai</option><option value="11650">Infiniti</option><option value="11900">Isuzu</option><option value="12100">Iveco</option><option value="12400">Jaguar</option><option value="12600">Jeep</option><option value="13200">Kia</option><option value="13450">Königsegg</option><option value="13900">KTM</option><option value="14400">Lada</option><option value="14600">Lamborghini</option><option value="14700">Lancia</option><option value="14800">Land Rover</option><option value="14845">Landwind</option><option value="15200">Lexus</option><option value="15400">Ligier</option><option value="15500">Lincoln</option><option value="15900">Lotus</option><option value="16200">Mahindra</option><option value="16600">Maserati</option><option value="16700">Maybach</option><option value="16800">Mazda</option><option value="137">McLaren</option><option value="17200">Mercedes-Benz</option><option value="17300">MG</option><option value="30011">Microcar</option><option value="17500">MINI</option><option value="17700">Mitsubishi</option><option value="17900">Morgan</option><option value="18700">Nissan</option><option value="18875">NSU</option><option value="18975">Oldsmobile</option><option value="19000">Opel</option><option value="149">Pagani</option><option value="19300">Peugeot</option><option value="19600">Piaggio</option><option value="19800">Plymouth</option><option value="20000">Pontiac</option><option value="20100">Porsche</option><option value="20200">Proton</option><option value="20700">Renault</option><option value="21600">Rolls-Royce</option><option value="21700">Rover</option><option value="125">Ruf</option><option value="21800">Saab</option><option value="22000">Santana</option><option value="22500">Seat</option><option value="22900">Skoda</option><option value="23000">Smart</option><option value="188">speedART</option><option value="100">Spyker</option><option value="23100">Ssangyong</option><option value="23500">Subaru</option><option value="23600">Suzuki</option><option value="23800">Talbot</option><option value="23825">Tata</option><option value="189">TECHART</option><option value="135">Tesla</option><option value="24100">Toyota</option><option value="24200">Trabant</option><option value="24400">Triumph</option><option value="24500">TVR</option><option value="25200">Volkswagen</option><option value="25100">Volvo</option><option value="25300">Wartburg</option><option value="113">Westfield</option><option value="25650">Wiesmann</option><option value="1400">Andere</option></select>
+			    <select id="bike" class="bike selectors" name="makeModelVariant1.makeId"><option value="">Beliebig</option><option value="220">Access Motor</option><option value="387">Adly</option><option value="500">Aeon</option><option value="800">Aixam</option><option value="224">American Ironhorse</option><option value="1500">Aprilia</option><option value="1650">Arctic Cat</option><option value="98">Baotian</option><option value="2625">Barossa</option><option value="30032">Bashan</option><option value="105">Beeline</option><option value="2900">Benelli</option><option value="3200">Beta</option><option value="184">Big Dog Motorcycles</option><option value="3400">Bimota</option><option value="12">Blata</option><option value="3500">BMW</option><option value="3750">Bombardier</option><option value="3800">Boom</option><option value="142">BRP</option><option value="73">BSA</option><option value="4200">Buell</option><option value="30031">Burelli</option><option value="4800">Cagiva</option><option value="30033">Can Am</option><option value="30035">Cectek</option><option value="163">CFMOTO</option><option value="6350">CPI</option><option value="6700">Daelim</option><option value="7200">Derbi</option><option value="7550">Dinli</option><option value="7600">DKW</option><option value="7800">Ducati</option><option value="69">e-max</option><option value="183">emco</option><option value="8433">E-Ton</option><option value="8442">Explorer</option><option value="9500">Gasgas</option><option value="9675">Generic</option><option value="10">GG Motorradtechnik</option><option value="9700">Gilera</option><option value="70">GOES</option><option value="9975">Gorilla</option><option value="10300">Harley-Davidson</option><option value="10600">Hercules</option><option value="30037">Herkules</option><option value="11000">Honda</option><option value="190">Horex</option><option value="11100">Husaberg</option><option value="11200">Husqvarna</option><option value="11400">Hyosung</option><option value="103">Indian</option><option value="12000">Italjet</option><option value="12450">Jawa</option><option value="174">Jinling</option><option value="13100">Kawasaki</option><option value="13125">Keeway</option><option value="13250">Kimi</option><option value="74">Kingway</option><option value="94">Knievel</option><option value="13650">Kreidler</option><option value="228">KSR</option><option value="13900">KTM</option><option value="171">Kumpan</option><option value="14200">Kymco</option><option value="212">Lambretta</option><option value="15000">Laverda</option><option value="15350">Lifan</option><option value="15700">Linhai</option><option value="192">LML</option><option value="193">Luxxon</option><option value="16300">Maico</option><option value="16400">Malaguti</option><option value="230">Mash</option><option value="16900">MBK</option><option value="126">Megelli</option><option value="108">Motobi</option><option value="18100">Moto Guzzi</option><option value="18125">Moto Morini</option><option value="118">Motowell</option><option value="18300">MV Agusta</option><option value="18400">Mz</option><option value="72">Norton</option><option value="18875">NSU</option><option value="191">Online</option><option value="19190">Pegasus</option><option value="19300">Peugeot</option><option value="19400">PGO</option><option value="19600">Piaggio</option><option value="19975">Polaris</option><option value="20250">Puch</option><option value="229">Quadix</option><option value="179">Quadro</option><option value="20790">Rewaco</option><option value="20795">Rieju</option><option value="30036">Rivero</option><option value="21750">Royal Enfield</option><option value="21900">Sachs</option><option value="22550">Seikel</option><option value="162">Sherco</option><option value="173">Shineray</option><option value="22800">Simson</option><option value="22912">Skyteam</option><option value="23016">SMC</option><option value="23600">Suzuki</option><option value="23675">SYM</option><option value="106">Tauris</option><option value="11">TGB</option><option value="225">Thunderbike</option><option value="24050">TM</option><option value="30034">Triton</option><option value="24400">Triumph</option><option value="24595">Ural</option><option value="25000">Vespa</option><option value="99">VICTORY</option><option value="25212">Voxan</option><option value="107">WMI</option><option value="26000">Yamaha</option><option value="151">Zero</option><option value="26450">Zhongyu</option><option value="26500">Zündapp</option><option value="1400">Andere</option></select>
+			    <select id="carvans" class="carvans selectors" >
+					<option value="">Beliebig</option>
+			    	<option value="156">ABI</option>
+			    	<option value="400">Adria</option>
+			    	<option value="700">Ahorn</option>
+			    	<option value="194">Airstream</option>
+			    	<option value="1000">Alpha</option>
+			    	<option value="1600">Arca</option>
+			    	<option value="2400">Autostar</option>
+			    	<option value="18">Avento</option>
+			    	<option value="2700">Bavaria-Camp</option>
+			    	<option value="2800">Bawemo</option>
+			    	<option value="206">Bela</option>
+			    	<option value="3000">Benimar</option>
+			    	<option value="164">Beyerland</option>
+			    	<option value="3300">Bimobil</option>
+			    	<option value="16">Bravia</option>
+			    	<option value="4500">Burow</option>
+			    	<option value="4300">Bürstner</option>
+			    	<option value="4812">Carado</option>
+			    	<option value="4825">Caravelair</option>
+			    	<option value="4900">Caro</option>
+			    	<option value="5000">Carthago</option>
+			    	<option value="5400">Challenger</option>
+			    	<option value="30038">Chateau</option>
+			    	<option value="5500">Chausson</option>
+			    	<option value="5700">Chrysler</option>
+			    	<option value="5800">CI International</option>
+			    	<option value="5900">Citroën</option>
+			    	<option value="208">Clever</option>
+			    	<option value="6100">Coachmen</option>
+			    	<option value="6300">Concorde</option>
+			    	<option value="6400">Cristall</option>
+			    	<option value="6500">CS Reisemobile</option>
+			    	<option value="7100">Dehler</option>
+			    	<option value="7125">Delta</option>
+			    	<option value="7300">Dethleffs</option>
+			    	<option value="210">DOMO</option>
+			    	<option value="136">Dopfer</option>
+			    	<option value="7900">Due Erre</option>
+			    	<option value="8000">Eifelland</option>
+			    	<option value="8100">Elnagh</option>
+			    	<option value="8429">Esterel</option>
+			    	<option value="8300">Eura Mobil</option>
+			    	<option value="8400">Euro Liner</option>
+			    	<option value="8420">EVM</option>
+			    	<option value="119">eXtreme</option>
+			    	<option value="8500">Fendt</option>
+			    	<option value="8700">FFB - Tabbert</option>
+			    	<option value="8800">Fiat</option>
+			    	<option value="8825">Fischer</option>
+			    	<option value="8900">Fleetwood</option>
+			    	<option value="9000">Ford</option>
+			    	<option value="9100">Ford / Reimo</option>
+			    	<option value="214">Forster</option>
+			    	<option value="14">Four-Wheel Camper</option>
+			    	<option value="9200">Frankia</option>
+			    	<option value="9288">FR-Mobil</option>
+			    	<option value="9600">General Motors</option>
+			    	<option value="143">GiottiLine</option>
+			    	<option value="9800">Globecar</option>
+			    	<option value="185">Glücksmobil</option>
+			    	<option value="10000">Granduca</option>
+			    	<option value="10400">Hehn</option>
+			    	<option value="10500">Heku</option>
+			    	<option value="10800">Hobby</option>
+			    	<option value="10900">Holiday Rambler</option>
+			    	<option value="19">Home-Car</option>
+			    	<option value="11027">HRZ</option>
+			    	<option value="11300">HYMER / ERIBA</option>
+			    	<option value="231">HYMERCAR</option>
+			    	<option value="207">Ilusion</option>
+			    	<option value="30039">Itineo</option>
+			    	<option value="12100">Iveco</option>
+			    	<option value="12750">Joint</option>
+			    	<option value="12870">Kabe</option>
+			    	<option value="13000">Karmann</option>
+			    	<option value="13275">Kip</option>
+			    	<option value="13300">Knaus</option>
+			    	<option value="14500">Laika</option>
+			    	<option value="14300">La Strada</option>
+			    	<option value="15800">LMC</option>
+			    	<option value="16000">M+M Mobile</option>
+			    	<option value="16500">MAN</option>
+			    	<option value="16800">Mazda</option>
+			    	<option value="16950">McLouis</option>
+			    	<option value="17200">Mercedes-Benz</option>
+			    	<option value="17450">Miller</option>
+			    	<option value="17600">Mirage</option>
+			    	<option value="17700">Mitsubishi</option>
+			    	<option value="17800">Mobilvetta</option>
+			    	<option value="17823">Monaco</option>
+			    	<option value="17850">Moncayo</option>
+			    	<option value="138">Morelo</option>
+			    	<option value="18600">Niesmann + Bischoff</option>
+			    	<option value="18650">Niewiadów</option>
+			    	<option value="95">NobelART</option>
+			    	<option value="18800">Nordstar</option>
+			    	<option value="19000">Opel</option>
+			    	<option value="19050">Orangecamp</option>
+			    	<option value="19100">Ormocar</option>
+			    	<option value="221">P.L.A.</option>
+			    	<option value="19179">Paul &amp; Paula</option>
+			    	<option value="19300">Peugeot</option>
+			    	<option value="19500">Phoenix</option>
+			    	<option value="19700">Pilote</option>
+			    	<option value="19900">Pössl</option>
+			    	<option value="20283">Raclet</option>
+			    	<option value="20300">Rapido</option>
+			    	<option value="20400">Reimo</option>
+			    	<option value="20500">Reisemobile Beier</option>
+			    	<option value="20700">Renault</option>
+			    	<option value="20800">Rimor</option>
+			    	<option value="20900">Riva</option>
+			    	<option value="21000">Riviera</option>
+			    	<option value="21100">RMB</option>
+			    	<option value="21200">Roadtrek</option>
+			    	<option value="21300">Robel-Mobil</option>
+			    	<option value="2300">Roller Team</option>
+			    	<option value="21925">SEA</option>
+			    	<option value="17">Seitz</option>
+			    	<option value="22600">Selbstbau</option>
+			    	<option value="13">Six-Pac</option>
+			    	<option value="22925">Sloop</option>
+			    	<option value="209">Sprite</option>
+			    	<option value="23350">Sterckeman</option>
+			    	<option value="23555">Sunlight</option>
+			    	<option value="79">Sun Living</option>
+			    	<option value="152">T@b</option>
+			    	<option value="23700">Tabbert</option>
+			    	<option value="23900">TEC</option>
+			    	<option value="24000">Tischer</option>
+			    	<option value="71">Trigano</option>
+			    	<option value="24300">Triple E</option>
+			    	<option value="21500">TSL Landsberg/ Rockwood</option>
+			    	<option value="213">VANTourer</option>
+			    	<option value="24700">Vario</option>
+			    	<option value="15">Vögele</option>
+			    	<option value="25200">Volkswagen</option>
+			    	<option value="25400">Weinsberg</option>
+			    	<option value="25500">Weippert</option>
+			    	<option value="25600">Westfalia</option>
+			    	<option value="25700">Wilk</option>
+			    	<option value="30040">Wingamm</option>
+			    	<option value="25800">Winnebago</option>
+			    	<option value="25900">Woelcke</option>
+			    	<option value="120">XGO</option>
+			    	<option value="1400">Andere</option>
+			</select> -->

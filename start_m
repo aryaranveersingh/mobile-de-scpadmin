@@ -1,0 +1,1 @@
+nohup php api/class.Scraper.php > scrape.log 2>&1 &
